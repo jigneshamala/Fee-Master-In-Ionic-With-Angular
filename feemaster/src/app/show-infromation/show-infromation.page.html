@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="infromation"></ion-back-button>
+        </ion-buttons>
+    <ion-title  style="color:#000000"  >Student Infromation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-col *ngFor="let item of row_data" style="margin:0px;padding:0px">
+        <ion-card class="item-text-wrap card" ng-repeat="item in items" style="padding:10px;margin-left:10px;margin-right:10px">
+          <ion-grid>
+            <ion-row style="color:#000000"> ID : {{ item.ID }} </ion-row>
+            <ion-row style="color:#000000"> Name : {{ item.name}} </ion-row>
+            <ion-row style="color:#000000"> gender : {{ item.gender}} </ion-row>
+            <ion-row style="color:#000000">college : {{ item.college}}</ion-row>
+            <ion-row style="color:#000000"> email  : {{ item.email }} </ion-row>
+            <ion-row style="color:#000000"> study : {{ item.study  }} </ion-row>
+            <ion-row style="color:#000000"> mobile : {{ item.mob}} </ion-row>
+            <ion-row style="color:#000000"> Address : {{ item.address}}</ion-row>
+            <ion-row style="color:#000000"> course: {{ item.course }} </ion-row>
+            <ion-row style="color:#000000"> total : {{ item.total}} </ion-row>
+            <ion-row style="color:#000000"> adm : {{ item.adm}} </ion-row>
+            <ion-row style="color:#000000"> date: {{ item.date}} </ion-row>
+            
+            <!-- <ion-row>
+              <ion-button
+                (click)="deleteRow(item)"
+                size="small"
+                color="danger">
+                <ion-icon name="trash"></ion-icon>
+              </ion-button>
+            </ion-row> -->
+            
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+        <ion-col  style="margin:0px;padding:0px">
+          <ion-card class="item-text-wrap card" ng-repeat="item in items" style="padding:10px;margin-left:10px;margin-right:10px">
+            <ion-grid>
+              
+              <ion-row style="color:#000000 ;text-decoration : underline ; font-size: 20px ; padding-bottom: 10px" > Fee Installment</ion-row>
+              <ion-row style="color:#000000" *ngFor="let item of row_data_fee ;let i=index;" >{{i+1}}.  {{ item.installtion}}    {{item.date}} </ion-row>
+              <ion-row style="color:#000000 ;text-decoration : underline ; font-size: 20px ; padding-bottom: 10px; padding-top: 10px" > Fees Detail </ion-row>
+              <!-- <ion-row style="color:#000000"> Total Installment + Admmission Fee </ion-row> -->
+              <ion-row style="color:#000000"> Total Fee Payed : {{"("+this.install + " + " + this.student_adm+") =" }} {{ this.paid}} </ion-row>
+              <!-- <ion-row style="color:#000000"> Total Fee - Total Fee Payed </ion-row> -->
+              <ion-row style="color:#000000"> Remaining Fee  : {{"("+this.student_total+" - "+this.paid+") ="}} {{ this.unpaid }} </ion-row>
+            </ion-grid>
+          </ion-card>
+        </ion-col>
+</ion-content>

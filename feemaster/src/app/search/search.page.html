@@ -1,0 +1,28 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title  style="color:#000000" >Search Master</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <form *ngIf="authname" [formGroup]="authname" (ngSubmit)="onSubmit(authname.value)">
+  <ion-item>
+    <ion-label>Student Name</ion-label>
+    <ion-select placeholder="Select One" formControlName="name" [(ngModel)]="Name_Item" >
+      <ion-select-option *ngFor="let item of row_data" value="{{item.name}}">{{item.name}}</ion-select-option>
+    </ion-select>
+</ion-item>
+     <div *ngIf="submitted && frm.name.errors" class="invalid-feedback">
+      <ion-item *ngIf="frm.name.errors.required">
+          <p style="color:red">Select Name is required !</p>
+      </ion-item>
+    </div>	
+    <ion-button type="submit" expand="block"color="tertiary" (click)="onSubmit('search')" >Search</ion-button>
+    <ion-button type="submit" expand="block" color="tertiary" (click)="showall()">Show All</ion-button>
+    <ion-button type="button" expand="block" color="tertiary" (click)="onSubmit('edit')">Edit</ion-button>
+    <ion-button type="button" expand="block" color="tertiary" (click)="onSubmit('delect')">Delect</ion-button>
+    <ion-button type="submit" expand="block" color="tertiary" (click)="delectall()">Delect All</ion-button>
+   </form>
+  </ion-content> 

@@ -1,0 +1,7 @@
+{
+  "name": "feemaster",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

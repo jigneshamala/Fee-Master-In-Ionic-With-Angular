@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:#000000" >Contact Us
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  
+    <ion-item>
+        <ion-label position="floating">Your Mail</ion-label>
+        <ion-input ngModel name="Mail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Title</ion-label>
+      <ion-input ngModel name="Tille"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Your Message</ion-label>
+    <ion-textarea name="Message"></ion-textarea>
+</ion-item>
+    <ion-button type="submit" expand="block" color="tertiary" >Submit</ion-button>
+    
+  </ion-content> 

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+       <ion-buttons slot="start">
+          <ion-back-button defaultHref="/" ></ion-back-button>
+        </ion-buttons>
+    <ion-title  style="color:#000000" >Show All Student Fee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-col *ngFor="let item of row_data" style="margin:0px;padding:0px">
+  <ion-card class="item-text-wrap card" ng-repeat="item in items" style="padding:10px;margin-left:10px;margin-right:10px">
+    <ion-grid>
+      <ion-row style="color:#000000"> ID : {{ item.ID }} </ion-row>
+      <ion-row style="color:#000000"> STUDENT_ID : {{ item.STUDENT_ID}} </ion-row>
+      <ion-row style="color:#000000"> Name : {{ item.name}} </ion-row>
+      <ion-row style="color:#000000"> mobile : {{ item.mob}}</ion-row>
+      <ion-row style="color:#000000"> installtion : {{ item.installtion}} </ion-row>
+      <ion-row style="color:#000000"> date  : {{ item.date }} </ion-row>
+      <!-- <ion-row style="color:#000000"> mobile : {{ item.mob}} </ion-row>
+      <ion-row style="color:#000000"> Address : {{ item.address}}</ion-row>
+      <ion-row style="color:#000000"> course: {{ item.course }} </ion-row>
+      <ion-row style="color:#000000"> total : {{ item.total}} </ion-row>
+      <ion-row style="color:#000000"> adm : {{ item.adm}} </ion-row>
+      <ion-row style="color:#000000"> date: {{ item.date}} </ion-row> -->
+      
+      <!-- <ion-row>
+        <ion-button
+          (click)="deleteRow(item)"
+          size="small"
+          color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-row> -->
+    </ion-grid>
+  </ion-card>
+</ion-col>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:#000000" >Student Infromation</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+<form *ngIf="authname" [formGroup]="authname" (ngSubmit)="onSubmit(authname.value)">
+  <ion-item>
+    <ion-label>Student Name</ion-label>
+    <ion-select placeholder="Select One" formControlName="name"  [(ngModel)]="Name_Item" >
+      <ion-select-option  *ngFor="let data of row_data" value="{{data.name}}">{{data.name}}</ion-select-option>
+    </ion-select>
+    </ion-item>
+   <div *ngIf="submitted && frm.name.errors" class="invalid-feedback">
+      <ion-item *ngIf="frm.name.errors.required">
+          <p style="color:red">Select Name is required !</p>
+      </ion-item>
+    </div>	
+   <ion-button type="submit" expand="block" color="tertiary" >Show Student Data</ion-button>
+   <!-- <ion-grid>
+   <ion-col *ngFor="let item of row_data_fee" style="margin:0px;padding:0px">
+    <ion-card class="item-text-wrap card" ng-repeat="item in items" style="padding:10px;margin-left:10px;margin-right:10px">
+      <ion-grid>
+        <ion-row style="color:#000000"> ID : {{ item.ID }} </ion-row>
+        <ion-row style="color:#000000"> STUDENT_ID : {{ item.STUDENT_ID}} </ion-row>
+        <ion-row style="color:#000000"> Name : {{ item.name}} </ion-row>
+        <ion-row style="color:#000000"> mobile : {{ item.mob}}</ion-row>
+        <ion-row style="color:#000000"> installtion : {{ item.installtion}} </ion-row>
+        <ion-row style="color:#000000"> date  : {{ item.date }} </ion-row>
+      </ion-grid>
+    </ion-card>
+   </ion-col>
+   </ion-grid> -->
+</form>
+</ion-content> 

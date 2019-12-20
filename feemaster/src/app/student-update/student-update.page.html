@@ -1,0 +1,192 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:#000000">Student Update</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding overflow-scroll=true scroll=true>
+  <form *ngIf="authForm" [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+    <ion-item>
+      <ion-label position="floating">Student Name</ion-label>
+      <ion-input disabled="true" formControlName="name" [(ngModel)]="Name_model" value="{{this.Name_model}}">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+
+      <!-- <div *ngIf="submitted && frm.name.errors" class="invalid-feedback">
+        <ion-item *ngIf="frm.name.errors.required">
+          <p style="color:red">name is required !</p>
+        </ion-item>
+        <ion-item *ngIf="frm.name.errors.pattern">
+          <p style="color:red">name must be alphabetic only in ('[a-zA-Z ]*') !</p>
+        </ion-item>
+        <ion-item *ngIf="frm.name.errors.maxlength ">
+          <p style="color:red"> A maximum of 30 characters can be entered !</p>
+        </ion-item>
+      </div> -->
+
+      <ion-label>Gender</ion-label>
+      <ion-select formControlName="gender" placeholder="Select One" [(ngModel)]="gender_model">
+        <ion-select-option value="Male">Male</ion-select-option>
+        <ion-select-option value="Female">Female</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div *ngIf="submitted && frm.gender.errors" class="invalid-feedback">
+      <ion-item *ngIf="frm.gender.errors.required">
+        <p style="color:red">gender is required !</p>
+      </ion-item>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">College Name</ion-label>
+      <ion-input formControlName="college" [(ngModel)]="Clg_name_model"></ion-input>
+    </ion-item>
+
+
+    <div *ngIf="submitted && frm.college.errors" class="invalid-feedback">
+      <ion-item *ngIf="frm.college.errors.required">
+        <p style="color:red">college is required !</p>
+      </ion-item>
+      <ion-item *ngIf="frm.college.errors.pattern">
+        <p style="color:red">college name must be alphabetic only in ('[a-zA-Z ]*') !</p>
+      </ion-item>
+      <ion-item *ngIf="frm.college.errors.maxlength ">
+        <p style="color:red"> A maximum of 30 characters can be entered !</p>
+      </ion-item>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email" [(ngModel)]="email_model" value="{{this.email_model}}"></ion-input>
+    </ion-item>
+
+    <div *ngIf="submitted && frm.email.errors" class="invalid-feedback">
+      <ion-item *ngIf="frm.email.errors.required">
+        <p style="color:red">Email is required!</p>
+      </ion-item>
+      <ion-item *ngIf="frm.email.errors.email">
+        <p style="color:red">Email must be a valid email address!</p>
+      </ion-item>
+    </div>
+
+    <ion-item>
+      <ion-label>Study In</ion-label>
+      <ion-select formControlName="study" placeholder="Select One" [(ngModel)]="study_in_model" value="{{this.study_in_model}}">
+        <ion-select-option value="BCA">BCA</ion-select-option>
+        <ion-select-option value="MCA">MCA</ion-select-option>
+        <ion-select-option value="PGDCA">PGDCA</ion-select-option>
+        <ion-select-option value="BTECh">B.TECH</ion-select-option>
+        <ion-select-option value="MTECH">M.Tech</ion-select-option>
+        <ion-select-option value="BCOM">BCOM</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div *ngIf="submitted && frm.study.errors" class="invalid-feedback">
+      <ion-item *ngIf="frm.study.errors.required">
+        <p style="color:red">study is required!</p>
+      </ion-item>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Mobile Number</ion-label>
+      <ion-input formControlName="mobile" [(ngModel)]="Mnumber_model"></ion-input>
+    </ion-item>
+
+    <div *ngIf="submitted && frm.mobile.errors" class="invalid-feedback">
+      <ion-item *ngIf="frm.mobile.errors.required">
+        <p style="color:red">Mobile is required!</p>
+      </ion-item>
+      <ion-item *ngIf="frm.mobile.errors.pattern">
+        <p style="color:red">mobile number must be number only in ('[0-9 ]*') !</p>
+      </ion-item>
+      <ion-item *ngIf="frm.mobile.errors.maxlength ">
+        <p style="color:red"> A maximum of 10 characters can be entered !</p>
+      </ion-item>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-input formControlName="address" [(ngModel)]="Address_model"></ion-input>
+    </ion-item>
+
+    <div *ngIf="submitted && frm.address.errors" class="invalid-feedback">
+      <ion-item *ngIf="frm.address.errors.required">
+        <p style="color:red">Address is required!</p>
+      </ion-item>
+      <ion-item *ngIf="frm.address.errors.pattern">
+        <p style="color:red">college name must be alphabetic only in ('[a-zA-Z ]*') !</p>
+      </ion-item>
+      <ion-item *ngIf="frm.address.errors.maxlength ">
+        <p style="color:red"> A maximum of 100 characters can be entered !</p>
+      </ion-item>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Cources</ion-label>
+      <ion-input formControlName="cources" [(ngModel)]="Cources_model"></ion-input>
+    </ion-item>
+
+    <div *ngIf="submitted && frm.cources.errors" class="invalid-feedback">
+      <ion-item *ngIf="frm.cources.errors.required">
+        <p style="color:red">Cources is required!</p>
+      </ion-item>
+      <ion-item *ngIf="frm.cources.errors.pattern">
+        <p style="color:red">cources name must be alphabetic only in ('[a-zA-Z ]*') !</p>
+      </ion-item>
+      <ion-item *ngIf="frm.cources.errors.maxlength ">
+        <p style="color:red"> A maximum of 30 characters can be entered !</p>
+      </ion-item>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Total Fee</ion-label>
+      <ion-input formControlName="total_fee" [(ngModel)]="Tfee_model"></ion-input>
+    </ion-item>
+
+    <div *ngIf="submitted && frm.total_fee.errors" class="invalid-feedback">
+      <ion-item *ngIf="frm.total_fee.errors.required">
+        <p style="color:red">Total Fee is required!</p>
+      </ion-item>
+      <ion-item *ngIf="frm.total_fee.errors.pattern">
+        <p style="color:red">>Total Fee must be number only in ('[0-9 ]*') !</p>
+      </ion-item>
+      <ion-item *ngIf="frm.total_fee.errors.maxlength ">
+        <p style="color:red"> A maximum of 10 characters can be entered !</p>
+      </ion-item>
+      <ion-item *ngIf="frm.total_fee.errors.minlength ">
+        <p style="color:red"> A minimum of 3 characters can be entered !</p>
+      </ion-item>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Addmission Fee</ion-label>
+      <ion-input formControlName="addmission_fee" [(ngModel)]="Afee_model"></ion-input>
+    </ion-item>
+
+    <div *ngIf="submitted && frm.addmission_fee.errors" class="invalid-feedback">
+      <ion-item *ngIf="frm.addmission_fee.errors.required">
+        <p style="color:red">Addmission Fee is required!</p>
+      </ion-item>
+      <ion-item *ngIf="frm.addmission_fee.errors.pattern">
+        <p style="color:red">Addmission Fee must be number only in ('[0-9 ]*') !</p>
+      </ion-item>
+      <ion-item *ngIf="frm.addmission_fee.errors.maxlength ">
+        <p style="color:red"> A maximum of 10 characters can be entered !</p>
+      </ion-item>
+      <ion-item *ngIf="frm.addmission_fee.errors.minlength ">
+        <p style="color:red"> A minimum of 3 characters can be entered !</p>
+      </ion-item>
+    </div>
+
+    <!-- <ion-button type="submit" expand="block" color="tertiary" (click)="insertRow()" >Register</ion-button> -->
+    <ion-button type="submit" expand="block" color="tertiary">Update</ion-button>
+
+    <ion-button type="submit" expand="block" color="tertiary" style="margin-bottom:280px" (click)="Show()">Show All
+      Student</ion-button>
+    <!-- </form> -->
+  </form>
+
+</ion-content>

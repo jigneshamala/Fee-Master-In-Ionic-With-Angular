@@ -1,0 +1,75 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+      <ion-button color="primary" (click)="Profile()">resitration</ion-button>
+  </div>
+</ion-content> -->
+<ion-header translucent>
+  <ion-toolbar color="tertiary">
+    <ion-title text-center>
+      Fee Management System
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section text-center margin-bottom style="margin-top: 15px;">
+    <ion-icon name="calculator" style="zoom:3.0;"></ion-icon>
+    <h1 style="font-size:1.4em" no-margin>
+      Welcome, <br />
+      The TrioErector
+    </h1>
+  </section>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card text-center padding color="tertiary" (click)="Student_Information()">
+          <ion-icon name="person" style="zoom:3.0;"></ion-icon>
+          <h2 style="font-size:1.4em" no-margin>Student Information</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card text-center padding color="tertiary" (click)="Student_Registration()">
+          <ion-icon name="people" style="zoom:3.0;"></ion-icon>
+          <h2 style="font-size:1.4em" no-margin>Student Registration</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card text-center padding color="tertiary" (click)="Fee_Master()">
+          <ion-icon name="document" style="zoom:3.0;"></ion-icon>
+          <h2 style="font-size:1.4em" no-margin>Fee Master</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card text-center padding color="tertiary" (click)="Search_Master()">
+          <ion-icon name="search" style="zoom:3.0;"></ion-icon>
+          <h2 style="font-size:1.4em" no-margin>Search Master</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+
+      <!-- <ion-col col-6>
+        <ion-card text-center padding color="tertiary" (click)="Contact()">
+          <ion-icon name="call" style="zoom:3.0;"></ion-icon>
+          <h2 style="font-size:1.4em" no-margin>Contact Us</h2>
+        </ion-card>
+      </ion-col> -->
+      <ion-col col-6>
+        <ion-card text-center padding color="tertiary" (click)="About()">
+          <ion-icon name="people" style="zoom:3.0;"></ion-icon>
+          <h2 style="font-size:1.4em" no-margin>About Us</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
